@@ -28,6 +28,7 @@ func main() {
 func run() {
 	_, err := flags.ParseArgs(&opts, os.Args[1:])
 	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error parsing flags: %v\n", err)
 		os.Exit(127)
 	}
 
